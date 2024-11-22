@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### Workshop NextJS 15 Camping สู้ๆ ครับทุกๆ คน
 
-## Getting Started
-
-First, run the development server:
+## EP1 ติดตั้ง NextJS15 & Shadcn
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest camp
+
+npx shadcn@latest init -d
+npx shadcn@latest add button
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## EP2 ติดตั้ง Navbar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx shadcn@latest add input
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## EP3 Darkmode
 
-## Learn More
+# https://ui.shadcn.com/docs/dark-mode/next
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install next-themes
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## EP4 Profile Button
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+type NavLinks = {
+  href: string;
+  label: string;
+};
 
-## Deploy on Vercel
+export const links: NavLinks[] = [
+  { href: "/", label: "Home" },
+  { href: "/favorits", label: "Favorits" },
+  { href: "/camp", label: "Camp" },
+];
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## EP 5 Clerk Authentication
+```plaintext
+Clerk จัดการผู้ใช้งาน
+https://clerk.com/
+---- Middleware ----
+https://clerk.com/docs/references/nextjs/clerk-middleware
+```
+## EP 6 Toast & SignIn, SignOut
+```tsx
+npx shadcn@latest add toast
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## EP 7 Form
+```plaintext
+1. form
+2. Action
+3. แยก components
+4. Props, types
+5. Send to Server action
+6. Validate with zod
+7. connect db (supabase)
+8. insert to db (supabase)
+```
+https://clerk.com/docs/deployments/clerk-environment-variables#sign-in-and-sign-up-redirects
+```env
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL='/profile/create'
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL='/profile/create'
+```
+
+
+## EP8 FromInput
+```tsx
+// rafce
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+type FormInputProps = {
+  name: string;
+  type: string;
+  label?: string;
+  defaultValue?: string;
+  placeholder?: string;
+};
+
+const FormInput = (props: FormInputProps) => {
+  const { name, type, label, defaultValue, placeholder } = props;
+  return (
+    <div className="mb-2">
+      <Label htmlFor={name}> {label} </Label>
+      <Input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        defaultValue={defaultValue}
+      />
+    </div>
+  );
+};
+export default FormInput;
+```
+## สู้ๆ ครับทุกๆ คน

@@ -1,4 +1,7 @@
-### Workshop NextJS 15 Camping สู้ๆ ครับทุกๆ คน
+# Camping-NextJs
+Study and learn according to the teacher รอยไถ พัฒนา.
+
+### Workshop NextJS 15 Camping 
 
 ## EP1 ติดตั้ง NextJS15 & Shadcn
 
@@ -99,3 +102,6 @@ const FormInput = (props: FormInputProps) => {
 export default FormInput;
 ```
 ## สู้ๆ ครับทุกๆ คน
+=======
+
+

@@ -1,14 +1,7 @@
+import { createProfileAction } from "@/actions/actions"
 import { SubmitButton } from "@/components/ui/form/Buttons"
 import FormContainer from "@/components/ui/form/FormContainer"
 import FormInput from "@/components/ui/form/FormInput"
-
-
-const createProfileAction = async (prevState: any, formData: FormData) => {
-  'use server'
-  const firstName = formData.get('firstName') as string
-  return { message: 'Create Profile Success!!!' }
-}
-
 
 
 const CreateProfile = () => {

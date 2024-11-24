@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button"
+import { SubmitButton } from "@/components/ui/form/Buttons"
 import FormInput from "@/components/ui/form/FormInput"
 
 
@@ -24,8 +25,7 @@ const CreateProfile = () => {
             <FormInput name="confirmpassword" label="Confirm Password" type="password" placeholder="Enter you Confirm Password" required/>
             <FormInput name="email" label="Email" type="email" placeholder="Enter you Email" required/>
           </div>
-          
-          <Button type="submit" size='lg'>Create Profile</Button>
+          <SubmitButton text="Create Profile" size="lg"/>
         </form>
       </div>
 

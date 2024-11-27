@@ -13,8 +13,8 @@ datasource db {
 model Profile {
   id           String     @id @default(uuid())
   clerkId      String     @unique
-  firstName    String
-  lastName     String
+  firstname    String
+  lastname     String
   username     String
   email        String
   profileImage String

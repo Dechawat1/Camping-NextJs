@@ -13,10 +13,7 @@ const CreateProfile = () => {
           <div className="grid md:grid-cols-2 gap-4 mt-4">
             <FormInput name="firstname" label="First Name" type="text" placeholder="Enter you First Name" required />
             <FormInput name="lastname" label="Last Name" type="text" placeholder="Enter you Last Name" required />
-            <FormInput name="username" label="Username" type="text" placeholder="Enter you Username" required />
-            <FormInput name="password" label="Password" type="password" placeholder="Enter you Password" required />
-            <FormInput name="confirmpassword" label="Confirm Password" type="password" placeholder="Enter you Confirm Password" required />
-            <FormInput name="email" label="Email" type="email" placeholder="Enter you Email" required />
+            <FormInput name="username" label="User Name" type="text" placeholder="Enter you Email" required />
           </div>
           <SubmitButton text="Create Profile" size="lg" />
         </FormContainer>

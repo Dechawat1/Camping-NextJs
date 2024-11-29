@@ -1,13 +1,13 @@
 'use server'
 import { profileSchema, validateWithZod } from "@/utils/schemas"
-import { clerkClient,currentUser } from '@clerk/nextjs/server'
+import { clerkClient, currentUser } from '@clerk/nextjs/server'
 import db from '@/utils/db'
 import { redirect } from "next/navigation"
 
 
-const getAuthUser = async()=>{
+const getAuthUser = async () => {
     const user = await currentUser()
-    if(!user){
+    if (!user) {
         throw new Error('You must logged!!!')
     }
     if (!user.privateMetadata.hasProfile) redirect("/profile/create");
@@ -26,12 +26,12 @@ const renderError = (error: unknown): { message: string } => {
 export const createProfileAction = async (prevState: any, formData: FormData) => {
     try {
         const user = await currentUser()
-        if(!user) throw new Error('Please Login!!!')
+        if (!user) throw new Error('Please Login!!!')
 
 
         const rawData = Object.fromEntries(formData)
         const validateField = validateWithZod(profileSchema, rawData)
-        
+
         await db.profile.create({
             data: {
                 clerkId: user.id,
@@ -43,17 +43,40 @@ export const createProfileAction = async (prevState: any, formData: FormData) =>
 
         const client = await clerkClient();
         await client.users.updateUserMetadata(user.id, {
-          privateMetadata: {
-            hasProfile: true,
-          },
+            privateMetadata: {
+                hasProfile: true,
+            },
         });
 
 
-        
-      // return { message: 'Create Profile Success!!!' }
+
+        // return { message: 'Create Profile Success!!!' }
     } catch (error) {
         console.log(error);
         return renderError(error)
     }
     redirect('/')
+}
+
+export const createLankmarkAction = async (
+    prevState: any,
+    formData: FormData
+): Promise<{ message: string }> => {
+    try {
+        const user = await currentUser()
+        if (!user) throw new Error('Please Login!!!')
+
+
+        const rawData = Object.fromEntries(formData)
+        //   const validateField = validateWithZod(profileSchema, rawData)
+
+
+
+
+        return { message: 'Create Lankmark Success!!!' }
+    } catch (error) {
+        // console.log(error);
+        return renderError(error)
+    }
+    // redirect('/')
 }

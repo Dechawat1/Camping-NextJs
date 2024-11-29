@@ -16,4 +16,7 @@ export const links: NavLinks[] = [
     {
         href: '/camp', label: 'Camp'
     },
+    {
+        href: '/camp/create', label: 'Create Landmark'
+    },
 ]

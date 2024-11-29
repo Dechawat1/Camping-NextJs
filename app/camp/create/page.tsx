@@ -20,7 +20,6 @@ const CreateLankmark = () => {
   
           <CategoryInput/>
           </div>
-          
           <SubmitButton text="create Landmark" size="lg" />
         </FormContainer>
       </div>

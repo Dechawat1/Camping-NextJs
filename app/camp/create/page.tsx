@@ -5,6 +5,7 @@ import FormContainer from "@/components/ui/form/FormContainer"
 import FormInput from "@/components/ui/form/FormInput"
 import ProvinceInput from "@/components/ui/form/ProvinceInput"
 import TextAreaInput from "@/components/ui/form/TextAreaInput"
+import MapLandmark from "@/components/ui/map/MapLandmark"
 
 
 const CreateLankmark = () => {
@@ -31,7 +32,7 @@ const CreateLankmark = () => {
               <ProvinceInput/>
           </div>
           
-          
+          <MapLandmark/>
 
 
           <SubmitButton text="create Landmark" size="lg" />

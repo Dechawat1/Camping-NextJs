@@ -1,4 +1,5 @@
-import { CircleUserRound } from 'lucide-react';
+import { CircleUserRound } from "lucide-react";
+
 const UserIcon = () => {
   return (
     <CircleUserRound />

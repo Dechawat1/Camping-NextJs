@@ -1,15 +1,17 @@
-import { Button } from "@/components/ui/button"
-
+// rafce
+import LoadingCard from "@/components/card/LoadingCard";
+import LandmarkContainer from "@/components/home/LandmarkContainer";
+import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
 const page = () => {
+  // Search
+
   return (
-    <>
-
-      <div>page</div>
-      <h1>Hello</h1>
-      <Button variant='destructive' size='sm'>Button</Button>
-      
-
-    </>
-  )
-}
-export default page
+    <section>
+      <Suspense fallback={<LoadingCard />}>
+        <LandmarkContainer />
+      </Suspense>
+    </section>
+  );
+};
+export default page;

@@ -29,7 +29,7 @@ const Search = () => {
   return (
     <Input
       type="text"
-      placeholder="Seach Camping..."
+      placeholder="Seach..."
       className="max-w-xs"
       onChange={(e) => {
         setSearch(e.target.value)

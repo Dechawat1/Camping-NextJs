@@ -23,7 +23,7 @@ export const landmarkSchema = z.object({
   name: z
     .string()
     .min(2, { message: "ชื่อต้องมากกว่า 2 อักขระ" })
-    .max(30, { message: "ชื่อต้องน้อยกว่า 30 อักขระ" }),
+    .max(50, { message: "ชื่อต้องน้อยกว่า 50 อักขระ" }),
   category: z.string(),
   description: z
     .string()

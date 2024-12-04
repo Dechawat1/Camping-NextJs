@@ -444,3 +444,4 @@ https://supabase.com/docs/guides/storage/uploads/standard-uploads
 https://clerk.com/docs/references/nextjs/auth
 ```
 ## สู้ๆ ครับทุกๆ คน
+By. https://www.youtube.com/@roitai-dev , https://github.com/tamphimai007/nextjs15-camping

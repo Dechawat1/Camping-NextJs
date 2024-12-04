@@ -1,4 +1,4 @@
-import { fetchLandmarks } from "@/actions/actions"
+import { fetchLandmarks, fetchLandmarksHero } from "@/actions/actions"
 import LandmarkList from "./LandmarkList"
 import { LandmarkCardProps } from "@/utils/types"
 import Hero from "../hero/Hero"
@@ -9,19 +9,22 @@ import NoDataPage from "../ืnodatapage/NoDataPage"
 
 const LandmarkContainer = async ({ search, category }: { search?: string, category?: string }) => {
   const landmarks: LandmarkCardProps[] = await fetchLandmarks({ search, category })
-  // console.log(landmarks)
+  const landmarksHero: LandmarkCardProps[] = await fetchLandmarksHero()
+  
 
-  if (!landmarks || landmarks.length === 0) {
-    return <NoDataPage/>
-  } else {
     return (
       <div>
-        <Hero landmarks={landmarks} />
+        <Hero landmarks={landmarksHero} />
         <CategoriesList search={search} category={category} />
-        <LandmarkList landmarks={landmarks} />
+        {
+          landmarks.length === 0
+          ? <NoDataPage/>
+          : <LandmarkList landmarks={landmarks} />
+        }
+        
       </div>
     )
-  }
+  
 
 
 }

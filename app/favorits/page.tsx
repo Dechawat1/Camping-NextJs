@@ -9,7 +9,6 @@ const FavoritsPage = async() => {
     return <NoDataPage/>
   }
 
-
   return <LandmarkList landmarks={favorites}/>
 }
 export default FavoritsPage

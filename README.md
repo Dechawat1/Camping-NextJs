@@ -30,6 +30,8 @@ DATABASE_URL="your_supabase_database_url_here"
 # Direct connection to the database (used by Prisma migration).
 DIRECT_URL="your_direct_database_url_here"
 
+```env.local
+
 ### `.env.local`
 
 
@@ -46,7 +48,7 @@ NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL="/profile/create"
 SUPABASE_URL="your_supabase_project_url"
 SUPABASE_KEY="your_supabase_anon_or_service_key"
 
-```env.local
+
 
 
 

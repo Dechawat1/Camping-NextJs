@@ -23,6 +23,7 @@
 
 ใช้สำหรับการเชื่อมต่อกับฐานข้อมูล
 
+```env
 
 # Connect to Supabase via connection pooling with Supavisor.
 DATABASE_URL="your_supabase_database_url_here"
@@ -30,12 +31,11 @@ DATABASE_URL="your_supabase_database_url_here"
 # Direct connection to the database (used by Prisma migration).
 DIRECT_URL="your_direct_database_url_here"
 
-```env.local
+
 
 ### `.env.local`
 
-
-
+```env.local
 # Clerk configuration
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
 CLERK_SECRET_KEY="your_clerk_secret_key"
